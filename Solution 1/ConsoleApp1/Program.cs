@@ -8,12 +8,28 @@ namespace ConsoleApp1
 {
     class Program
     {
+        //Iniciando uma constante de um numero inteiro
+        const int testeConst = 999;
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("Teste!");
+            string TestePrimitivo = string.Empty;
+            String outroTestePrimitivo = string.Empty;
+            bool testComp = "123" == "123";
+            Boolean testeComp = "123" == "123";
 
+            var testeFora = string.Empty;
+            testeFora = "teste";
+           
+                
+            var teste1 = "String"; //Texto
+            var teste2 = 'A'; //Char
+            var teste3 = 8; //Int
+            var teste4 = 3.8; //Double
+            var teste5 = 0x0F; //Hex
+            //Apresentando a const
+            Console.WriteLine(testeConst);
             Console.ReadKey();
-
         }
     }
 }
