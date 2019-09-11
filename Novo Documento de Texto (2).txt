@@ -1,1 +1,2 @@
 Commit teste 2
+Teste de conflit
