@@ -14,11 +14,17 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string TestePrimitivo = string.Empty;
-            String outroTestePrimitivo = string.Empty;
-            bool testComp = "123" == "123";
-            Boolean testeComp = "123" == "123";
+            String outroTestePrimitivo;
+            bool testComp;
+            Boolean testeComp;
+
+            bool? testeBoolNull;
+
+            int numeroInteiro = 999;
+            long numeroInteiroLongo = 8598215;
 
             var testeFora = string.Empty;
+
             testeFora = "teste";
            
                 
