@@ -1,1 +1,3 @@
 Commit teste 2
+Teste de conflit
+Teset conflit 2
