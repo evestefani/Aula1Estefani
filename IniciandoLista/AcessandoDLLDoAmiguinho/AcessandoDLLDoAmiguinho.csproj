@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{083DA8A8-378C-4096-8029-6141D32C5F15}</ProjectGuid>
+    <ProjectGuid>{65890DC1-B1A6-4658-94A0-5443CEA47AB5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ExerciciosAula1709</RootNamespace>
-    <AssemblyName>ExerciciosAula1709</AssemblyName>
+    <RootNamespace>AcessandoDLLDoAmiguinho</RootNamespace>
+    <AssemblyName>AcessandoDLLDoAmiguinho</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MinhaBiblioteca\Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
