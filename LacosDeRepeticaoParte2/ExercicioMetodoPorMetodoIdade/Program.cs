@@ -30,9 +30,9 @@ namespace ExercicioMetodoPorMetodoIdade
 
             foreach (var item in listaDeInformacoes)
             {
-                var separabdoInformacoes = item.Split(',');
-                var nomepessoa = separabdoInformacoes[0].Split(':')[1];
-                var idade = separabdoInformacoes[1].Split(':')[1];
+                var separandoInformacoes = item.Split(',');
+                var nomepessoa = separandoInformacoes[0].Split(':')[1];
+                var idade = separandoInformacoes[1].Split(':')[1];
 
                 if (int.Parse(idade) >= 18)
                     Console.WriteLine($"{nomepessoa} com idade de {idade} é uma pessoa maior de 18 anos!");
