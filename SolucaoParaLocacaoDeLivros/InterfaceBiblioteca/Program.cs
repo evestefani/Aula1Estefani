@@ -53,6 +53,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                 Console.WriteLine("4 - Cadastrar Livro");
                 Console.WriteLine("5 - Listar Livros");
                 Console.WriteLine("6 - Remover usuário");
+                Console.WriteLine("7 - Remover livros");
                 Console.WriteLine("0 - Sair");
 
                 ///Aqui vamos pegar o número digitado
@@ -77,7 +78,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                     case 3:
                         while (!RealizaLoginSistema())
                             Console.WriteLine("LOGIN e SENHA inválidos!");
-                            Console.Clear();
+                        Console.Clear();
                         break;
                     case 4:
                         AdicionarLivro(); //Metodo que adiciona um livro ao nosso sistema
@@ -88,6 +89,10 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                     case 6:
                         RemoveUsuarioPeloID(); //Metodo que inicializa a tela para remover o usuario
                         break;
+                    case 7:
+                        RemoverLivroPorID();  //Metodo que inicializa a tela para remover o livro
+                        break;
+
 
                 }
                 MostraMenuSistema();
@@ -123,7 +128,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
         /// <returns>Retorna verdadeiro quando login e senha informados estiverem corretos</returns>
         private static bool RealizaLoginSistema()
         {
-        
+
             //Informamos o que é preciso para entrar no sistema
             Console.WriteLine("Informe seu LOGIN e SENHA para acessar o sistema: ");
             //Informamos no console que precisamos do Login do usuario
@@ -135,7 +140,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
             //Solicitamos a senha do usuario
             var senhaDoUsuario = Console.ReadLine();
 
-          
+
             Usuario usuario = new Usuario();
             usuario.Login = loginDoUsuario;
             usuario.Senha = senhaDoUsuario;
@@ -231,11 +236,29 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
             usuariosController.RemoverUsuarioPorID(usuarioID);
 
             //Informamos que o usuario foi desativado com sucesso
-            Console.WriteLine("Usuário destaivado com sucesso!");
+            Console.WriteLine("Usuário desativado com sucesso!");
             Console.ReadKey();
 
         }
-            
-        
+        /// <summary>
+        /// Metodo que remove os livros disponiveis no sistema
+        /// </summary>
+        private static void RemoverLivroPorID()
+        {
+            Console.WriteLine("Remover um livro pelo ID do sistema");
+            //Metódo que mostra os livros criados anteriormente, assim facilitando o usuario informar o ID correto a ser desativado
+            MostrarLivros();
+
+            Console.WriteLine("Informe o ID para desativar do sistema: ");
+            var livroID = int.Parse(Console.ReadLine());
+
+            //Aqui chamamos RemoverLivroPorID da nossa classe que controla os usuarios do sistema
+            livrosController.RemoverLivroPorID(livroID);
+
+            //Informamos que o livro foi desativado com sucesso
+            Console.WriteLine("Livro desativado com sucesso!");
+            Console.ReadKey();
+
+        }
     }
 }
