@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relatorio", "Relatorio\Relatorio.csproj", "{426362A5-8B0E-4473-8734-DC8353FD6406}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{426362A5-8B0E-4473-8734-DC8353FD6406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426362A5-8B0E-4473-8734-DC8353FD6406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426362A5-8B0E-4473-8734-DC8353FD6406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426362A5-8B0E-4473-8734-DC8353FD6406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00F3774B-86EF-4D4E-935B-9E49B61542B5}
+	EndGlobalSection
+EndGlobal
