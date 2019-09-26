@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{426362A5-8B0E-4473-8734-DC8353FD6406}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Relatorio</RootNamespace>
-    <AssemblyName>Relatorio</AssemblyName>
+    <ProjectGuid>{38B37C5F-3386-4EBA-ACE9-7DADCD884CEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeitorDeDadosVendas</RootNamespace>
+    <AssemblyName>LeitorDeDadosVendas</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,14 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\VendasController.cs" />
-    <Compile Include="Model\Venda.cs" />
-    <Compile Include="Model\SistemaDeVendas.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\ListaDeVendas.cs" />
+    <Compile Include="Model\RelatorioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

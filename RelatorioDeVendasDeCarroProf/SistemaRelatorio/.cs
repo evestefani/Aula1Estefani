@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Relatorio.Model
+namespace SistemaRelatorio
 {
-    public class SistemaDeVendas
+    public class Class1
     {
-
-
     }
 }

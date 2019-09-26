@@ -3,16 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Relatorio.Controller;
-using Relatorio.Model;
+using LeitorDeDadosDeVendas.Controller;
+using System.Threading;
 
-namespace Relatorio
+namespace InterfaceVendas
 {
     class Program
     {
+        static VendasController vendasController = new VendasController();
+       
+
         static void Main(string[] args)
         {
 
+            Console.WriteLine(" -------* Relátorio de Vendas *--------");
+            Console.WriteLine();
+
+            RelatorioPorPeriodo();
+
+
         }
-    }
+
+
+        private static void RelatorioPorPeriodo()
+        {
+
+
+
+        }
+
+       
+    }                   
+    
 }

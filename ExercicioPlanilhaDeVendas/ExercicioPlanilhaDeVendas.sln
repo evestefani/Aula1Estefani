@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relatorio", "Relatorio\Relatorio.csproj", "{426362A5-8B0E-4473-8734-DC8353FD6406}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceVendas", "Relatorio\InterfaceVendas.csproj", "{426362A5-8B0E-4473-8734-DC8353FD6406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeitorDeDadosVendas", "LeitorDeDadosVendas\LeitorDeDadosVendas.csproj", "{38B37C5F-3386-4EBA-ACE9-7DADCD884CEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{426362A5-8B0E-4473-8734-DC8353FD6406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{426362A5-8B0E-4473-8734-DC8353FD6406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{426362A5-8B0E-4473-8734-DC8353FD6406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B37C5F-3386-4EBA-ACE9-7DADCD884CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B37C5F-3386-4EBA-ACE9-7DADCD884CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B37C5F-3386-4EBA-ACE9-7DADCD884CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B37C5F-3386-4EBA-ACE9-7DADCD884CEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
