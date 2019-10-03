@@ -30,7 +30,7 @@ SELECT * FROM Pedidos;
 /*SELECT que junta as duas tabelas trazendo todas as informações delas, neste caso ainda filtrando as informações por nome, valor, id, etc... pelo where*/
 SELECT -- Iniciando o select
 ped. * -- Aqui temos todas as colunas de nossa tabela pedidos apenas
-FROM Pedidos ped -- Seleção da mpssa tabela de pedidos
+FROM Pedidos ped -- Seleção da massa tabela de pedidos
 inner join -- Terminador SQL que junta as duas informações
 Clientes cli on ped.ClienteId = cli.Id -- Validamos o que conecta as informações
 where cli.Nome = 'Estefani' -- Aqui aplicamos um filtro para estas informações
