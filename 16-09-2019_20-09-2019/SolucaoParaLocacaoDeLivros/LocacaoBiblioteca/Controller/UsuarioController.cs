@@ -13,6 +13,8 @@ namespace LocacaoBiblioteca.Controller
     public class UsuarioController
     {
         private LocacaoContext contextDB = new LocacaoContext();
+        public UsuarioContextDB GetUsuario = new UsuarioContextDB();
+        
 
         /// <summary>
         /// Metódo que realiza o login dentro do nosso sistema e para realizar o login padrão use:
@@ -26,6 +28,28 @@ namespace LocacaoBiblioteca.Controller
 
         }
 
+
+        /// <summary>
+        /// Metodo usado para adicionar um novo usuario do sistema
+        /// </summary>
+        /// <param name="parametroUusario">Nono usuario que será adicionado a lista</param>
+        public bool AdicionarUsuario(Usuario item)
+        {
+            if (string.IsNullOrWhiteSpace(item.Login))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(item.Senha))
+                return false;
+
+            GetUsuario.Usuarios.Add(item);
+
+            GetUsuario.SaveChanges();
+
+            return true;
+
+        }
+
+
         /// <summary>
         /// Metodo que realiza o login dentro do nosso sistema
         /// </summary>
@@ -37,18 +61,29 @@ namespace LocacaoBiblioteca.Controller
             return RetornaListaDeUsuarios().Exists(x => x.Login == usuario.Login && x.Senha == usuario.Senha);
         }
 
-        /// <summary>
-        /// Metodo usado para adicionar um novo usuario do sistema
-        /// </summary>
-        /// <param name="parametroUusario">Nono usuario que será adicionado a lista</param>
-        public void AdicionarUsuario(Usuario parametroUsuario)
-        {
-            //Adiciono o meu usuario a minha lista
-            parametroUsuario.Id = contextDB.IdContadorUsuarios++;
-            contextDB.ListaDeUsuarios.Add(parametroUsuario);
-            parametroUsuario.DataCriacao = DateTime.Now;
 
+        /// <summary>
+        /// Metodo que atualiza o nosso usuario em nossa lista já "instanciada" criada dentro do construtor
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public bool AtualizarUsuario(Usuario item)
+        {
+
+            var livro = GetUsuario.Usuarios.FirstOrDefault(x => x.Id == item.Id);
+
+            if (livro == null)
+                return false;
+            else
+            {
+                item.DataAlteracao = DateTime.Now;
+            }
+
+            GetUsuario.SaveChanges();
+
+            return true;
         }
+
 
         /// <summary>
         /// Metodo que retorna nossa lista interna de usuarios
@@ -59,6 +94,7 @@ namespace LocacaoBiblioteca.Controller
             //Retorna agora somente a lista de usuarios ativos com a expressao where
             return contextDB.ListaDeUsuarios.Where(x => x.Ativo).ToList<Usuario>();
         }
+
 
         /// <summary>
         /// Metódo que desativa um registro de usuario cadastrado em nossa lista  

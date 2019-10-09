@@ -13,7 +13,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
     class Program
     {
         //Instanciamos "Carregamos para a memoria nosso controlador dos livros
-        static LivrosController livrosController = new LivrosController();
+        static LivroController livrosController = new LivroController();
 
         //Instanciamos "Carregamos para a memoria nosso controlador dos usuarios
         static UsuarioController usuariosController = new UsuarioController();
@@ -52,8 +52,9 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                 Console.WriteLine("3 - Troca de usuário");
                 Console.WriteLine("4 - Cadastrar Livro");
                 Console.WriteLine("5 - Listar Livros");
-                Console.WriteLine("6 - Remover usuário");
-                Console.WriteLine("7 - Remover livros");
+                Console.WriteLine("6 - Atualizar Livros");
+                Console.WriteLine("7 - Remover usuário");
+                Console.WriteLine("8 - Remover livros");
                 Console.WriteLine("0 - Sair");
 
                 ///Aqui vamos pegar o número digitado
@@ -87,9 +88,12 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                         MostrarLivros(); //Metodo que lista os livros cadastrados no sistema
                         break;
                     case 6:
-                        RemoveUsuarioPeloID(); //Metodo que inicializa a tela para remover o usuario
+                        AtualizarLivro();
                         break;
                     case 7:
+                        RemoveUsuarioPeloID(); //Metodo que inicializa a tela para remover o usuario
+                        break;
+                    case 8:
                         RemoverLivroPorID();  //Metodo que inicializa a tela para remover o livro
                         break;
 
@@ -240,6 +244,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
             Console.ReadKey();
 
         }
+
         /// <summary>
         /// Metodo que remove os livros disponiveis no sistema
         /// </summary>
@@ -260,5 +265,45 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
             Console.ReadKey();
 
         }
+
+        /// <summary>
+        /// Metódo para atualizar um celular que já está no nosso sistema
+        /// </summary>
+        public static void AtualizarLivro()
+
+        {
+
+            Console.WriteLine("\n--- Atualizar livro ---");
+            Console.WriteLine();
+
+            livrosController.RetornaListaDeLivros().ForEach(item => Console.WriteLine($"ID {item.Id}: Nome do livro: {item.Nome}, {item.DataCriacao}"));
+
+
+            Console.WriteLine();
+            Console.WriteLine("Informe o Id para alteração de registro");
+
+      
+            var livros = int.Parse(Console.ReadLine());
+
+   
+            var book = livrosController.GetLivros().FirstOrDefault(x => x.Id == livros);
+           if (book == null)
+                Console.WriteLine("Id informado inválido!");
+
+            Console.WriteLine("\nInforme o nome do livro:");
+ 
+            book.Nome = Console.ReadLine();
+
+            var resultado = livrosController.GetLivros(book);
+
+            if (resultado)
+                Console.WriteLine("\nCelular atualizado com sucesso\n!");
+            else
+                Console.WriteLine("\nErro ao atualizar o celular!");
+
+
+        }
+
+
     }
 }

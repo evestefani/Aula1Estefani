@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 namespace LocacaoBiblioteca.Model
 {
     public class LocacaoContext
+
     {
         //propriedade que armazena o ID dos livros adicionados ao sistema
         public int IdContadorLivros { get; set; } = 1;
@@ -29,7 +31,7 @@ namespace LocacaoBiblioteca.Model
                 Id = IdContadorLivros++,
                 Nome = "Peter Pan",
                 DataCriacao = DateTime.Now
-            }); 
+            });
 
             //adicionamos um livro
             ListaDeLivros.Add(new Livro()
@@ -62,7 +64,6 @@ namespace LocacaoBiblioteca.Model
                 DataCriacao = DateTime.Now
             });
         }
-
         public List<Livro> ListaDeLivros { get; set; }
 
         public List<Usuario> ListaDeUsuarios { get; set; }
