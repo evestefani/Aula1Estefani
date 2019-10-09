@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalagoCelulares", "CatalagoCelulares\CatalagoCelulares.csproj", "{7765980E-6C17-467F-8AC6-CE6BED876CFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellDu", "CellDu\CellDu.csproj", "{DA195632-C642-4973-B006-0E2F18F87419}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7765980E-6C17-467F-8AC6-CE6BED876CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7765980E-6C17-467F-8AC6-CE6BED876CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7765980E-6C17-467F-8AC6-CE6BED876CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7765980E-6C17-467F-8AC6-CE6BED876CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA195632-C642-4973-B006-0E2F18F87419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA195632-C642-4973-B006-0E2F18F87419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA195632-C642-4973-B006-0E2F18F87419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA195632-C642-4973-B006-0E2F18F87419}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA2CBC4F-85FE-4E64-B092-0873ABD3E267}
+	EndGlobalSection
+EndGlobal
