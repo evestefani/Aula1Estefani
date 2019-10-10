@@ -18,6 +18,8 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
         //Instanciamos "Carregamos para a memoria nosso controlador dos usuarios
         static UsuarioController usuariosController = new UsuarioController();
 
+        LocacaoContext locacaoContext = new LocacaoContext(); 
+
         static void Main(string[] args)
         {
             Console.WriteLine(" -------*SISTEMA DE LOCAÇÃO DE LIVROS 1.0*--------");
@@ -53,8 +55,9 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                 Console.WriteLine("4 - Cadastrar Livro");
                 Console.WriteLine("5 - Listar Livros");
                 Console.WriteLine("6 - Atualizar Livros");
-                Console.WriteLine("7 - Remover usuário");
-                Console.WriteLine("8 - Remover livros");
+                Console.WriteLine("7 - Atualizar Usuarios");
+                Console.WriteLine("8 - Remover usuário");
+                Console.WriteLine("9 - Remover livros");
                 Console.WriteLine("0 - Sair");
 
                 ///Aqui vamos pegar o número digitado
@@ -91,9 +94,12 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
                         AtualizarLivro();
                         break;
                     case 7:
-                        RemoveUsuarioPeloID(); //Metodo que inicializa a tela para remover o usuario
+                        AtualizarUsuario();
                         break;
                     case 8:
+                        RemoveUsuarioPeloID(); //Metodo que inicializa a tela para remover o usuario
+                        break;
+                    case 9:
                         RemoverLivroPorID();  //Metodo que inicializa a tela para remover o livro
                         break;
 
@@ -141,17 +147,16 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
             var loginDoUsuario = Console.ReadLine();
             //Informamos no console que precisa da senha
             Console.WriteLine("Senha: ");
-            //Solicitamos a senha do usuario
             var senhaDoUsuario = Console.ReadLine();
-
 
             Usuario usuario = new Usuario();
             usuario.Login = loginDoUsuario;
             usuario.Senha = senhaDoUsuario;
-
-            //Validamos o login de maneira duvidosa
-            return usuariosController.LoginSistema(usuario);
-
+            return usuariosController.LoginSistema(new Usuario()
+            { 
+            Login = loginDoUsuario,
+            Senha = senhaDoUsuario
+            });
 
         }
 
@@ -267,7 +272,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
         }
 
         /// <summary>
-        /// Metódo para atualizar um celular que já está no nosso sistema
+        /// Metódo para atualizar um livro que já está no nosso sistema
         /// </summary>
         public static void AtualizarLivro()
 
@@ -276,7 +281,7 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
             Console.WriteLine("\n--- Atualizar livro ---");
             Console.WriteLine();
 
-            livrosController.RetornaListaDeLivros().ForEach(item => Console.WriteLine($"ID {item.Id}: Nome do livro: {item.Nome}, {item.DataCriacao}"));
+            livrosController.RetornaListaDeLivros().ForEach(item => Console.WriteLine($"ID: {item.Id}, Nome do livro: {item.Nome}, {item.DataCriacao}"));
 
 
             Console.WriteLine();
@@ -287,23 +292,63 @@ namespace InterfaceBiblioteca //Sistema - Regra de negócio
 
    
             var book = livrosController.GetLivros().FirstOrDefault(x => x.Id == livros);
-           if (book == null)
+            if (book == null)
                 Console.WriteLine("Id informado inválido!");
 
             Console.WriteLine("\nInforme o nome do livro:");
  
             book.Nome = Console.ReadLine();
 
-            var resultado = livrosController.GetLivros(book);
+            var resultado = livrosController.AtualizarLivro(book);
 
             if (resultado)
-                Console.WriteLine("\nCelular atualizado com sucesso\n!");
+                Console.WriteLine("\nLivro atualizado com sucesso\n!");
             else
-                Console.WriteLine("\nErro ao atualizar o celular!");
+                Console.WriteLine("\nErro ao atualizar o livro!");
 
-
+            Console.ReadKey();
         }
 
+        /// <summary>
+        /// Metódo para atualizar um usuario que já está no nosso sistema
+        /// </summary>
+        public static void AtualizarUsuario()
 
+        {
+
+            Console.WriteLine("\n--- Atualizar usuario ---");
+            Console.WriteLine();
+
+            usuariosController.RetornaListaDeUsuarios().ForEach(item => Console.WriteLine($"ID: {item.Id}, Login: {item.Login}, Senha: {item.Senha}, {item.DataCriacao}"));
+
+
+            Console.WriteLine();
+            Console.WriteLine("Informe o Id para alteração de registro");
+
+
+            var usuarios = int.Parse(Console.ReadLine());
+
+
+            var usu = usuariosController.GetUsuarios().FirstOrDefault(x => x.Id == usuarios);
+            if (usu == null)
+                Console.WriteLine("Id informado inválido!");
+
+            Console.WriteLine("\nInforme o usuario:");
+
+            usu.Login = Console.ReadLine();
+
+            Console.WriteLine("\nInforme a senha:");
+
+            usu.Senha = Console.ReadLine();
+
+            var resultado = usuariosController.AtualizarUsuario(usu);
+
+            if (resultado)
+                Console.WriteLine("\nUsuario atualizado com sucesso\n!");
+            else
+                Console.WriteLine("\nErro ao atualizar o usuario!");
+
+            Console.ReadKey();
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace LocacaoBiblioteca.Model
     /// <summary>
     /// Nossa Class que contem as informações que nossos livros vão apresentar
     /// </summary>
-    public class Livro
+    public class Livro : ControleUsuario
     {
         [Key]
         public int Id { get; set; }
@@ -19,14 +19,6 @@ namespace LocacaoBiblioteca.Model
         [Required]
         public string Nome { get; set; }
 
-        public bool Ativo { get; set; } = true;
-
-        public int UsuarioCriacao { get; set; } = 0;
-
-        public int UsuarioAlteracao { get; set; } = 0;
-
-        public DateTime DataCriacao { get; set; } = DateTime.Now;
-
-        public DateTime DataAlteracao { get; set; } = DateTime.Now;
+       
     }
 }

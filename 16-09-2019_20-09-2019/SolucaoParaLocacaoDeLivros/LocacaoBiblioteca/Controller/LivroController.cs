@@ -12,9 +12,8 @@ namespace LocacaoBiblioteca.Controller
     /// </summary>
     public class LivroController
     {
-        //private LocacaoContext contextDB = new LocacaoContext();//
 
-        public LivroContextDB GetLivro = new LivroContextDB(); 
+        LocacaoContext locacaoContext = new LocacaoContext();
 
         /// <summary>
         /// Metodo construtor que prepara o terreno para já iniciar com livros pré cadastrados
@@ -27,7 +26,7 @@ namespace LocacaoBiblioteca.Controller
 
         public IQueryable<Livro> GetLivros()
         {
-            return GetLivro.Livros.Where(x => x.Ativo == true);
+            return locacaoContext.Livros.Where(x => x.Ativo == true);
         }
 
         /// <summary>
@@ -37,39 +36,40 @@ namespace LocacaoBiblioteca.Controller
         public bool AdicionarLivro(Livro item)
         {
             if (string.IsNullOrWhiteSpace(item.Nome))
-                return false;
+            return false;
 
-            GetLivro.Livros.Add(item); 
+            locacaoContext.Livros.Add(item);
 
-            GetLivro.SaveChanges(); 
+            locacaoContext.SaveChanges(); 
 
-            return true; 
+           return true;
 
         }
-
+ 
 
         /// <summary>
         /// Metodo que atualiza o nosso livro em nossa lista já "instanciada" criada dentro do construtor
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
+        /// <param name="item">Livro que vamos estar atualizando dentro do nosso sistema</param>
+        /// <returns>Retorna verdadeiro para quando o mesmo atualizar o livro</returns>
         public bool AtualizarLivro(Livro item)
         {
-            
-            var livro = GetLivro.Livros.FirstOrDefault(x => x.Id == item.Id);
+            //Nosso banco de dados.ListadeLivrosdo nosso banco de dados.Reegra de busca do nosso livro
+            var livro = locacaoContext.Livros.FirstOrDefault(x => x.Id == item.Id);
 
     
-            if (livro == null) 
-                return false; 
-            else
+            if (livro == null) //Verificamos se o livro realmente existe para estarmos atualizando
+          
             {
-                item.DataAlteracao = DateTime.Now; 
-
+             
+                item.DataAlteracao = DateTime.Now; //Colocamos a data de alteração do nosso registro
+                locacaoContext.SaveChanges();
+                return true;
             }
+            //Só chegamos a este ponto quando ele não realizar o salvamento da alteração
+            return false;
 
-            GetLivro.SaveChanges();
-
-            return true; 
+            
         }
     
 
@@ -80,11 +80,11 @@ namespace LocacaoBiblioteca.Controller
         public void RemoverLivroPorID(int identificadoID)
         {
             //FirstOrDefault retorna null em caso de não encontrar um registro
-            var livro = GetLivro.Livros.FirstOrDefault(x => x.Id == identificadoID);
+            var livro = locacaoContext.Livros.FirstOrDefault(x => x.Id == identificadoID);
             //tratamento do valor quando ele não encontrar um livro com o id
             if (livro != null)
                 livro.Ativo = false;
-            GetLivro.SaveChanges();
+            locacaoContext.SaveChanges();
         }
 
 
@@ -94,7 +94,7 @@ namespace LocacaoBiblioteca.Controller
         /// <returns>Lista contendo os livros</returns>
         public List<Livro> RetornaListaDeLivros()
         {
-            return GetLivro.Livros.Where(x => x.Ativo).ToList<Livro>();
+            return locacaoContext.Livros.Where(x => x.Ativo).ToList<Livro>();
         }
     }
 }

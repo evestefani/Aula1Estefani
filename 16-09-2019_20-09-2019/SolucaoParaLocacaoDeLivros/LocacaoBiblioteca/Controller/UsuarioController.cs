@@ -1,9 +1,10 @@
-﻿using LocacaoBiblioteca.Model;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LocacaoBiblioteca.Model;
 
 namespace LocacaoBiblioteca.Controller
 {
@@ -12,8 +13,9 @@ namespace LocacaoBiblioteca.Controller
     /// </summary>
     public class UsuarioController
     {
-        private LocacaoContext contextDB = new LocacaoContext();
-        public UsuarioContextDB GetUsuario = new UsuarioContextDB();
+
+        LocacaoContext locacaoContext = new LocacaoContext();
+        
         
 
         /// <summary>
@@ -25,7 +27,21 @@ namespace LocacaoBiblioteca.Controller
         /// <returns>Retorna verdadeiro quando existir o usúario com este login e senha</returns>
         public UsuarioController()
         {
+            var defaultUser = locacaoContext.Usuarios.FirstOrDefault(x => x.Login == "admin" && x.Senha == "admin" && x.Ativo == true);
 
+            if (defaultUser == null)
+                locacaoContext.Usuarios.Add(new Usuario()
+                {
+                    Login = "admin",
+                    Senha = "admin"
+                });
+
+            locacaoContext.SaveChanges();
+        }
+
+        public IQueryable<Usuario> GetUsuarios()
+        {
+            return locacaoContext.Usuarios.Where(x => x.Ativo == true);
         }
 
 
@@ -41,9 +57,9 @@ namespace LocacaoBiblioteca.Controller
             if (string.IsNullOrWhiteSpace(item.Senha))
                 return false;
 
-            GetUsuario.Usuarios.Add(item);
+            locacaoContext.Usuarios.Add(item);
 
-            GetUsuario.SaveChanges();
+            locacaoContext.SaveChanges();
 
             return true;
 
@@ -58,7 +74,8 @@ namespace LocacaoBiblioteca.Controller
         public bool LoginSistema(Usuario usuario)
 
         {
-            return RetornaListaDeUsuarios().Exists(x => x.Login == usuario.Login && x.Senha == usuario.Senha);
+            bool login = GetUsuarios().ToList().Exists(x => x.Login == usuario.Login && x.Senha == usuario.Senha);
+            return login;
         }
 
 
@@ -70,16 +87,16 @@ namespace LocacaoBiblioteca.Controller
         public bool AtualizarUsuario(Usuario item)
         {
 
-            var livro = GetUsuario.Usuarios.FirstOrDefault(x => x.Id == item.Id);
+            var usuario = locacaoContext.Usuarios.FirstOrDefault(x => x.Id == item.Id);
 
-            if (livro == null)
+            if (usuario == null)
                 return false;
             else
             {
                 item.DataAlteracao = DateTime.Now;
             }
 
-            GetUsuario.SaveChanges();
+            locacaoContext.SaveChanges();
 
             return true;
         }
@@ -92,7 +109,7 @@ namespace LocacaoBiblioteca.Controller
         public List<Usuario> RetornaListaDeUsuarios()
         {
             //Retorna agora somente a lista de usuarios ativos com a expressao where
-            return contextDB.ListaDeUsuarios.Where(x => x.Ativo).ToList<Usuario>();
+            return locacaoContext.Usuarios.Where(x => x.Ativo).ToList<Usuario>();
         }
 
 
@@ -102,9 +119,8 @@ namespace LocacaoBiblioteca.Controller
         /// <param name="identificadoID">Parametro que identifica o usuario que será desativado</param>
         public void RemoverUsuarioPorID(int identificadoID)
         {
-            //FirstOrDefault retorna null em caso de não encontrar um registro
-            var usuario = contextDB.ListaDeUsuarios.FirstOrDefault(x => x.Id == identificadoID);
-            //tratamento do valor quando ele não encontrar um livro com o id
+      
+            var usuario = locacaoContext.Usuarios.FirstOrDefault(x => x.Id == identificadoID);
             if (usuario != null)
                 usuario.Ativo = false;
         }
