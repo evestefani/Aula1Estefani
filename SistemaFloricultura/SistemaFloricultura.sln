@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListandoFlores", "ListandoFlores\ListandoFlores.csproj", "{B50DC2CF-255A-43CA-849E-7612856D8542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceFloricultura", "InterfaceFloricultura\InterfaceFloricultura.csproj", "{71621B60-BEDA-4B6F-9A0D-790D8FACB4A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B50DC2CF-255A-43CA-849E-7612856D8542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50DC2CF-255A-43CA-849E-7612856D8542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50DC2CF-255A-43CA-849E-7612856D8542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50DC2CF-255A-43CA-849E-7612856D8542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71621B60-BEDA-4B6F-9A0D-790D8FACB4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71621B60-BEDA-4B6F-9A0D-790D8FACB4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71621B60-BEDA-4B6F-9A0D-790D8FACB4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71621B60-BEDA-4B6F-9A0D-790D8FACB4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64156701-1E2D-4699-87C4-4FA22E601F81}
+	EndGlobalSection
+EndGlobal
