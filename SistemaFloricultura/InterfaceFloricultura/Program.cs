@@ -16,9 +16,10 @@ namespace InterfaceFloricultura
         {
             InserirNome();
             ListarNome();
+            RelatorioFloricultura();
         }
 
-        public static void InserirNome()
+        private static void InserirNome()
 
         {
             Console.WriteLine("\n--- Digite o nome de uma flor ---\n");
@@ -37,17 +38,31 @@ namespace InterfaceFloricultura
 
         }
 
-        public static void ListarNome()
+        private static void ListarNome()
         {
             Console.WriteLine("\n--- Listar nomes ---");
             Console.WriteLine();
 
 
-            FloresController.GetListaNomes().ToList<Flores>().ForEach(x => Console.WriteLine($"Id: {x.Id} Nome: {x.Nome} Quantidade: {x.Quantidade}"));
+            FloresController.GetListaNomes().ToList<Flores>().ForEach(x => Console.WriteLine($"Id: {x.Id} - Nome: {x.Nome} - Quantidade: {x.Quantidade}"));
 
             Console.ReadKey();
 
         }
+
+        private static void RelatorioFloricultura()
+        {
+            Console.WriteLine("\n--- Relatório ordenado da quantidade ---\n");
+
+            FloresController.GetListaNomes().OrderByDescending(x => x.Quantidade).ToList().ForEach(x => Console.WriteLine($"Id: {x.Id} - Nome: {x.Nome} - Quantidade: {x.Quantidade}"));
+
+            Console.WriteLine("\n--- Soma total das flores ---\n");
+            Console.WriteLine(FloresController.GetListaNomes().Sum(x => x.Quantidade));
+
+            Console.ReadKey();
+        }
+           
+        
 
 
 
