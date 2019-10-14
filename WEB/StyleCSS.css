@@ -1,0 +1,43 @@
+body {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    align-items: baseline;
+    display: flex;
+}
+
+.texto {
+    border-style: solid;
+    border-color: #ff00dc;
+    padding: 30px;
+    margin: 30px;
+    background: #ffffff;
+    height: 700px;
+    box-shadow: #ff00dc 2px 2px;
+}
+
+.texto p {
+    text-align: center;
+    text-align: justify;
+    color: #000000;
+    font-size: 15px;
+    width: 500px;
+    height: 50px;
+}
+
+.texto h1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #00000
+
+}
+ 
+.texto h3 {
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    display: flex;
+    color: #000000;
+    }
