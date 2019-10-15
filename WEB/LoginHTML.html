@@ -3,108 +3,88 @@
     <title>Login</title>
 </head>
 <style>
-    
-    body
+
+    ::placeholder 
     {
-     background-size:cover;
+      color: rgba(253, 251, 251, 0.76);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      font-style: italic;
+      border: 1px solid #fff;
+    }
+    
+    input 
+    {
+      border: 0px;
+      background-color: #ffffff00;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: #fff;
+    }
+    
+    #interface
+    {
+      text-align: center;
+      position: absolute;
+      bottom:25%;
+      left: 38%;
+      padding:70px;
+      background-color: #ffffff30;
+
     }
 
     #login
     {
-        color: #fff;
-        font: bold;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: #131212;
+      font: bold;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background-color: #ffffff00;
 
-    }
-
-    #interface
-    {
-        text-align: center;
-        position: absolute;
-        bottom:25%;
-        left: 38%;
-        padding:70px;
-        background-color:#ffffff30;
-
-        
     }
 
     #box1
     {
-        text-align: center;
-      
-        text-align: center;
-        color: #0009;
-        margin: 50px;
+        text-align: center;  
+        color: #000;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         width: 200px; 
 	    margin: 10px auto;
-        border-style: solid;
-        border-color: ActiveBorder;
         outline: none;
         border: none;  
-        background:none;
-
-     
-    }
-
-    input 
-    {
-      border: 0px;
-      background-color: #ffffff30;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      color: #000;
     }
 
     #box2
     {
-        text-align: center;
-        color: #0009;
-        margin: 50px;
+        text-align: center;  
+        color: #000;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         width: 200px; 
 	    margin: 10px auto;
-        border-style: solid;
-        border-color: ActiveBorder;
         outline: none;
         border: none;  
-        background: none;
-
-
-     
     }
 
     #botao
     {
         text-align: center;
-        color: #fff;
-        margin: 50px;
+        color: #131212;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        width: 200px; 
-	    margin: 0px auto;
-        outline: none;
-        border: none;  
-        background:#ffffff30;
-        border: 1px solid #0009;
-        cursor: pointer;
-        width: 100%;
+        outline: none;  
+        border: 1px solid #fff;
+        width: 200px;
         padding: 5px;
-        font-size: 18px;
-        margin: 12px 0;
-        
-
+        margin: 15px 0;
+        background-color:#ffffff00;
      
     }
 
     #video 
     {
-          position: fixed;
-          right: 0;
-          bottom: 0;
-          min-width: 100%;
-          min-height: 100%;
-          z-index:-1;
-       
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index:-1; 
     }
 
 </style>
@@ -123,21 +103,21 @@
 
         <div id="box1">
 
-            <h4><b>Usuário</b></h4>
-            <input type="text"  name="campotexto" id="campotexto" placeholder="Informe o usuario" />
+            <h4>Informe o usuário</h4>
+            <i><input type="text" name="campotexto" id="campotexto" placeholder="usuário" /></i>
 
         </div>
 
         <div id="box2">
 
-            <h4><b>Senha</b></h4>
-            <input type="password" name="senhaSegura" id="senhaSegura" placeholder="Informe a senha">
+            <h4>Informe a senha</h4>
+            <input type="password" name="senhaSegura" id="senhaSegura" placeholder="senha"/>
 
         </div>
 
         <div id="botao">
 
-            <input type="button" class="botao" value="Login">
+            <input type="button" name="botao" value="ENTRA">
 
         </div>
 
