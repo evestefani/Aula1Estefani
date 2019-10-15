@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="height:100vh;background-image:url('https://i.pinimg.com/originals/60/0b/52/600b52943240009ada48cbc8c91598c2.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="row h-100">
+        <div class="col-sm-12 h-100 d-table">
+            <div class="card card-block d-table-cell align-middle" style="background-color:transparent;">
+                <div class="row d-flex justify-content-center">
+                    <div class="card align-middle" style="background:rgba(255, 255, 255, 0.45);">
+                        <div class="card-header text-center display-4">
+                            Formulário
+                        </div>
+                        <div class="col-md-12 card-body">
+                            <div class="row form-group">
+                                <div class="col-md-12 ">
+                                    <input type="text" class="w-100 form-control" name="nome" placeholder="Nome completo" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-8">
+                                    <input type="text" class="w-100 form-control" name="nacionalidade" placeholder="Nacionalidade" />
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="number" class="w-100 form-control" name="idade" placeholder="Idade" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <input type="text" name="cpf" class="w-100 form-control" placeholder="CPF" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="date" class="w-100 form-control" name="Data Nascimento" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <input type="button" class="w-100 form-control btn btn-outline-dark" name="enviar" value="ENVIAR" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+
+    <script>
+        /*Forma que executamos após o documento já estar carregado*/
+        $(document).ready(
+            /*Uma função dentro do nosso document reader*/
+            function () {
+                /*masl para o nosso campo CPF*/
+                $('input[name="cpf"]').mask("000.000.000-00");
+
+                /*adicionando funções ao botão*/
+                $('input[type="button"]').click(
+                    function () {
+                        /*obtemos a idade*/ 
+                        var idade = $('input[name="idade"]').val();
+                        /*obtemos o nome*/
+                        var nome = $('input[name="nome"]').val();
+
+                           /*comparamos a idade*/
+                        if (idade < 18) {
+                            /*apresentamos a idade*/
+                            alert("O formulário não aceita menores de 18 anos!");
+                            window.location = "http://parmalat.com.br/";
+                        }
+                        /*redirecionamos*/
+                        else {
+                            alert("Olá " + nome + " bem vindo à cervejaria!");
+                            window.location = "http://www.ambev.com.br";
+                        }
+                   
+                 });
+            }
+        );
+    </script>
+</body>
+</html >
