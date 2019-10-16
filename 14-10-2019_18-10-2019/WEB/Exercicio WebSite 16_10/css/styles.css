@@ -1,0 +1,49 @@
+body {
+  height:100vh;
+  background-image:url('http://getwallpapers.com/wallpaper/full/e/f/9/696375-beautiful-antarctica-wallpaper-1920x1080-for-4k-monitor.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+
+}
+
+
+.card {
+background-color:#ffffff00;
+border-color:#000;
+}
+
+.card-header {
+margin-bottom:20px;
+font-size:38px;
+border-bottom-color:#000;
+background-color:transparent;
+color:#000;
+
+}
+
+.col-md-12 {
+ margin-bottom: 25px;
+}
+
+#meuBotao {
+    margin-left: 30%;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.40);
+    color: #000;
+    outline-color: #000;
+}
+
+#campoNome {
+    background-color: rgba(255, 255, 255, 0.40);
+    border-color: #000;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-primary {
+    font-size: 2rem;
+    border-color: #000;
+}
+.form-control {
+color:#000;
+}

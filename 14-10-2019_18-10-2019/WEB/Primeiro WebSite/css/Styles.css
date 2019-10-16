@@ -1,0 +1,11 @@
+.time_now {
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color:aquamarine;
+font-size:50px;
+}
+
+.col-6 span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: deeppink;
+    font-size: 70px;
+}

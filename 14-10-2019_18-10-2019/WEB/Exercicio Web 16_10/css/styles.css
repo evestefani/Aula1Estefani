@@ -1,0 +1,10 @@
+body {
+    height: 100vh;
+    background-image: url('https://www.designerd.com.br/wp-content/uploads/2018/07/download.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-outline-success {
+    margin-left: 25%;
+}
