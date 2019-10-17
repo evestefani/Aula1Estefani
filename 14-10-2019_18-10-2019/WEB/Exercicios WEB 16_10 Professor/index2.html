@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Formulários</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles2.css">
+
+</head>
+<body style="height:100vh;">
+    <!--Temos nosso conteudo ocupando todo o espaço da viewport-->
+    <div class="container-fluid h-100">
+        <!--Aqui temos nossa primeira linha do site-->
+        <div class="row d-flex align-content-center justify-content-center h-100">
+            <!--Aqui crio o separador "div" e sinalizo o mesmo, ele irá usar apenas 3/12 de nossa area total disponível-->
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">BRL</span>
+                        </div>
+                        <input type="text" class="form-control" name="valoreal" placeholder="Informe o valor em Real">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">USD</span>
+                        </div>
+                        <input type="text" class="form-control" name="valordolar" placeholder="Conversão para dólar americano">
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="button" name="btnconverter" class="w-100 btn btn-Light form-group" value="Converter" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script type="text/javascript" src="js/scripts2.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+body {
+    background-image: url('https://lh3.googleusercontent.com/proxy/pb_7RNeS1soQtnZ0j40e57W6Re26DRwyJgSa100C08teDckZg5Uxwfq9uAnu5ck1LcIZR2tPD86wPkqdLX8ultPYIrUCXzh4V4iIwtfLzzysLEz29N4iH9u_Og8JBsA=s0-d');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn {
+    color: #ff00dc;
+    font-size: 20px;
+    margin-top: 15px;
+    background-color: #000;
+    border: 1px dotted #ff00dc;
+}
+
+
+.form-control {
+    text-align: center;
+    border: 1px dotted #ff00dc;
+}
