@@ -11,8 +11,8 @@ namespace ListaDeNomes.Controllers
     public class ListaDeNomesController : ApiController
     {
 
-        List<Pessoa> listaDeObjetos = new List<Pessoa>()
-
+        List<Pessoa> Pessoas = new List<Pessoa>()
+         
         {
             new Pessoa() {Nome="Estefani", Idade=31},
             new Pessoa() {Nome="Bruno", Idade=30},
@@ -24,21 +24,20 @@ namespace ListaDeNomes.Controllers
             new Pessoa() {Nome="Lou", Idade=1},
             new Pessoa() {Nome="Lucy", Idade=1},
             new Pessoa() {Nome="Maga", Idade=5}
- 
-        };
+
+         };
 
         public List<Pessoa> Get()
         {
-            return listaDeObjetos;
+            return Pessoas;   
         }
 
-        public List<Pessoa> Post(Pessoa values)
+        public Pessoa Post(Pessoa item)
         {
-            Pessoa listNomes = values;
 
-            listaDeObjetos.Add(listNomes);
+            Pessoas.Add(item);
 
-            return listaDeObjetos;
+            return item;
         }
     }
 
