@@ -1,5 +1,6 @@
 namespace WebApiBancoExistente.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -27,6 +28,7 @@ namespace WebApiBancoExistente.Models
 
         public DateTime DatAlt { get; set; }
 
+        [JsonIgnore]
         public virtual Carro Carro1 { get; set; }
     }
 }
