@@ -180,6 +180,10 @@
     <Compile Include="Migrations\201910301843587_DatTimeAtualizado.designer.cs">
       <DependentUpon>201910301843587_DatTimeAtualizado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910311437025_AlteracoesCustomModelConfiguration.cs" />
+    <Compile Include="Migrations\201910311437025_AlteracoesCustomModelConfiguration.designer.cs">
+      <DependentUpon>201910311437025_AlteracoesCustomModelConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomValidator.cs" />
     <Compile Include="Models\Imovel.cs" />
@@ -279,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910301843587_DatTimeAtualizado.resx">
       <DependentUpon>201910301843587_DatTimeAtualizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311437025_AlteracoesCustomModelConfiguration.resx">
+      <DependentUpon>201910311437025_AlteracoesCustomModelConfiguration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
