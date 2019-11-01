@@ -12,7 +12,7 @@ using LocacaoDeVeiculos.Models;
 
 namespace LocacaoDeVeiculos.Controllers
 {
-    public partial class MarcasController : ApiController
+    public class MarcasController : ApiController
     {
         private DataBaseContext db = new DataBaseContext();
 
